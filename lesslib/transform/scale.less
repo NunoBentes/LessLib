@@ -2,26 +2,50 @@
  *
  *
  * @@@ Description
- * 
- * @@@ Params
+ * Scale an object
+ *
+ * @@@ Params & Mixin Structure
+ *
+ * - Params
+ * <x>        [X-axis scale factor] 			Ex. 1.2
+ * <y>        [height scale factor] 			Ex. 1.5
+ * <z>        [height scale factor] 			Ex. 2.0
+ *
+ * - Mixin Structure
+ * .size(<x>, <y>, <z>);
  *
  *
  * @@@ Usage
  *
  * - Less Example
+ * .example {
+ *     .scale(1.2,2,3);
+ * }
+ *
  *
  * - Css Output
+ * .example {
+ *     -webkit-transform: scale(1.2,2,3);
+ *     transform: scale(1.2,2,3);
+ * }
  *
+ * .example1 {
+ *     width:100px;
+ *     height:100px;
+ * }
+ * 
  *
  * @@@ Notes
- * You can find more information about display property at https://developer.mozilla.org/en-US/docs/Web/CSS/transform?v=control
+ * You can find more information about display propertyathttps://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
  * 
+ *
+ * @@@ Prefixes Support
+ * Based on caniuse website @ http://caniuse.com/#search=transform
+ *
  *
  */
 
-.scale (@factor) {
+.scale(@factor) {
 	-webkit-transform: scale(@factor);
-	-moz-transform: 	 scale(@factor);
-	-ms-transform: 		 scale(@factor);
-	-o-transform: 		 scale(@factor);
+    transform: scale(@factor);
 }
