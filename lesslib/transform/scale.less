@@ -2,7 +2,7 @@
  *
  *
  * @@@ Description
- * Scale an object
+ * Scale an object.
  *
  * @@@ Params & Mixin Structure
  *
@@ -12,7 +12,10 @@
  * <z>        [height scale factor] 			Ex. 2.0
  *
  * - Mixin Structure
- * .size(<x>, <y>, <z>);
+ * .scale(<x>, <y>, <z>);
+ * .scaleX(<x>);
+ * .scaleX(<y>);
+ * .scaleX(<y>);
  *
  *
  * @@@ Usage
@@ -22,6 +25,9 @@
  *     .scale(1.2,2,3);
  * }
  *
+ * .example1 {
+ *     .scaleX(1.2);
+ * }
  *
  * - Css Output
  * .example {
@@ -30,8 +36,8 @@
  * }
  *
  * .example1 {
- *     width:100px;
- *     height:100px;
+ *     -webkit-transform: scaleX(1.2);
+ *     transform: scaleX(1.2);
  * }
  * 
  *
@@ -48,4 +54,19 @@
 .scale(@factor) {
 	-webkit-transform: scale(@factor);
     transform: scale(@factor);
+}
+
+.scaleX(@factor) {
+	-webkit-transform: scaleX(@factor);
+    transform: scaleX(@factor);
+}
+
+.scaleY(@factor) {
+	-webkit-transform: scaleY(@factor);
+    transform: scaleY(@factor);
+}
+
+.scaleZ(@factor) {
+	-webkit-transform: scaleZ(@factor);
+    transform: scaleZ(@factor);
 }
