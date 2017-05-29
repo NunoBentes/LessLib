@@ -1,0 +1,51 @@
+/**
+ *
+ *
+ * @@@ Description
+ * Resize element by adding width & height values. Display type can be added,
+ * but if empty will not output the css display property.
+ * 
+ * @@@ Params
+ * <width>         [width unit] 			px, %, etc
+ * <height>        [height unit] 			px, %, etc
+ * <display>       [property value] 		block, inline-block, etc
+ *
+ *
+ * @@@ Usage
+ *
+ * - Less Example
+ * .example {
+ *     .size(100px, 100px, block);
+ * }
+ *
+ * .example1 {
+ *     .size(100px, 100px);
+ * }
+ *
+ * - Css Output
+ * .example {
+ *     width:100px;
+ *     height:100px;
+ *     display:block;
+ * }
+ *
+ * .example1 {
+ *     width:100px;
+ *     height:100px;
+ * }
+ *
+ *
+ * @@@ Notes
+ * You can find more information about display property at https://developer.mozilla.org/en-US/docs/Web/CSS/display?
+ * 
+ *
+ */
+
+.size(@width, @height, @display:undefined) {
+	width: @width;
+	height: @height;
+
+	& when not( @display = undefined ) {
+		display: @display;
+	}
+}
