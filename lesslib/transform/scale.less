@@ -2,44 +2,30 @@
  *
  *
  * @@@ Description
- * Scale an object.
+ * The scale() CSS function modifies the size of the element.
  *
  * @@@ Params & Mixin Structure
  *
- * - Params
- * <x>        [X-axis scale factor] 			Ex. 1.2
- * <y>        [height scale factor] 			Ex. 1.5
- * <z>        [height scale factor] 			Ex. 2.0
- *
  * - Mixin Structure
- * .scale(<x>, <y>, <z>);
- * .scaleX(<x>);
- * .scaleX(<y>);
- * .scaleX(<y>);
+ * .scale(@x-axis, @y-axis); -> Defines a 2D scale transformation by giving a value for the X-axis and Y-axis.
+ * .scaleX(@x-axis); -> Defines a 2D scale transformation over the X-axis
+ * .scaleY(@y-axis); -> Defines a 2D scale transformation over the Y-axis
+ * .scaleZ(@z-axis); -> Defines a 3D scale transformation over the Z-axis
+ * .scale3d(@x-axis, @y-axis,@z-axis); -> Defines a 3D scale transformation over the Z-axis, Y-axis and Z-Axis
  *
  *
  * @@@ Usage
- *
  * - Less Example
  * .example {
- *     .scale(1.2,2,3);
- * }
- *
- * .example1 {
- *     .scaleX(1.2);
+ *     .scale(1.2,2);
  * }
  *
  * - Css Output
  * .example {
- *     -webkit-transform: scale(1.2,2,3);
- *     transform: scale(1.2,2,3);
+ *     -webkit-transform: scale(1.2,2);
+ *     transform: scale(1.2,2);
  * }
  *
- * .example1 {
- *     -webkit-transform: scaleX(1.2);
- *     transform: scaleX(1.2);
- * }
- * 
  *
  * @@@ Notes
  * You can find more information about display propertyathttps://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
@@ -51,22 +37,37 @@
  *
  */
 
-.scale(@factor) {
-	-webkit-transform: scale(@factor);
-	transform: scale(@factor);
+
+/**
+ * Scale 2D 
+ */
+
+.scale(@ratio: 1) {
+	-webkit-transform: scale(@ratio);
+	transform: scale(@ratio);
 }
 
-.scaleX(@factor) {
-	-webkit-transform: scaleX(@factor);
-	transform: scaleX(@factor);
+.scaleX(@x-axis: 1) {
+	-webkit-transform: scaleX(@x-axis);
+	transform: scaleX(@x-axis);
 }
 
-.scaleY(@factor) {
-	-webkit-transform: scaleY(@factor);
-	transform: scaleY(@factor);
+.scaleY(@y-axis: 1) {
+	-webkit-transform: scaleY(@y-axis);
+	transform: scaleY(@y-axis);
 }
 
-.scaleZ(@factor) {
-	-webkit-transform: scaleZ(@factor);
-	transform: scaleZ(@factor);
+
+/**
+ * Scale 3D
+ */
+
+.scaleZ(@z-axis) {
+	-webkit-transform: scaleZ(@z-axis);
+	transform: scaleZ(@z-axis);
+}
+
+.scale3d(@x-axis: 1, @y-axis: 1, @z-axis: 1) {
+	-webkit-transform: scale3d(@x-axis, @y-axis, @z-axis);
+	transform: scale3d(@x-axis, @y-axis, @z-axis);
 }
