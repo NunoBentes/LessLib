@@ -1,3 +1,25 @@
 /**
  * Under Development
  */
+
+ // http://shouldiprefix.com
+
+ .vertical-gradient(@top-color: ##FFF, @bottom-color: #eee) {
+	background-color: @top-color;
+	background: -webkit-gradient(linear, left top, left bottom, from(@top-color), to(@bottom-color));
+	background: -webkit-linear-gradient(top, @top-color, @bottom-color);
+	background: -moz-linear-gradient(top, @top-color, @bottom-color);
+	background: -ms-linear-gradient(top, @top-color, @bottom-color);
+	background: -o-linear-gradient(top, @top-color, @bottom-color);
+    background: linear-gradient(to bottom, @top-color 0%, @bottom-color 100%);
+}
+
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+ 	background-color: @startColor;
+	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+	background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+	background-image: -moz-linear-gradient(left, @startColor, @endColor);
+	background-image: -ms-linear-gradient(left, @startColor, @endColor);
+	background-image: -o-linear-gradient(left, @startColor, @endColor);
+    background: linear-gradient(to right, @top-color 0%, @bottom-color 100%);
+}
