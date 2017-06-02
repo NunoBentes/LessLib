@@ -5,6 +5,7 @@
  // http://shouldiprefix.com
  // http://autoprefixer.github.io/
 
+<<<<<<< HEAD
  .vertical-gradient(@start-color: #FFF, @end-color: #eee) {
 	background-color: @start-color;
 	background: -webkit-gradient(linear, left top, left bottom, from(@start-color), to(@end-color));
@@ -23,4 +24,37 @@
 	background-image: -ms-linear-gradient(left, @start-color, @end-color);
 	background-image: -o-linear-gradient(left, @start-color, @end-color);
     background: linear-gradient(to right, @start-color 0%, @end-color 100%);
+=======
+
+.linear-gradient( @dir: top, @start-color: #eee, @end-color: #aaa ) {
+	background: -webkit-linear-gradient(@dir, @start-color 0%, @end-color 100%);
+	background: -moz-linear-gradient(@dir, @start-color 0%, @end-color 100%);
+	background: -ms-linear-gradient(@dir, @start-color 0%, @end-color 100%);
+	background: -o-linear-gradient(@dir, @start-color 0%, @end-color 100%);
+	background: linear-gradient(@dir, @start-color 0%, @end-color 100%);
+}
+
+
+
+
+
+ .vertical-gradient(@start-color: ##FFF, @end-color: #eee) {
+	background-color: @start-color;
+	background: -webkit-gradient(linear, left top, left bottom, from(@start-color), to(@end-color));
+	background: -webkit-linear-gradient(top, @start-color, @end-color);
+	background: -moz-linear-gradient(top, @start-color, @end-color);
+	background: -ms-linear-gradient(top, @start-color, @end-color);
+	background: -o-linear-gradient(top, @start-color, @end-color);
+    background: linear-gradient(to bottom, @start-color 0%, @end-color 100%);
+>>>>>>> f6436c422f9e32deb56d592a54971f8e4a8b5ff8
+}
+
+.horizontal-gradient (@start-color: #eee, @end-color: white) {
+ 	background-color: @start-color;
+	background-image: -webkit-gradient(linear, left top, right top, from(@start-color), to(@end-color));
+	background-image: -webkit-linear-gradient(left, @start-color, @end-color);
+	background-image: -moz-linear-gradient(left, @start-color, @end-color);
+	background-image: -ms-linear-gradient(left, @start-color, @end-color);
+	background-image: -o-linear-gradient(left, @start-color, @end-color);
+    background: linear-gradient(to right, @top-color 0%, @end-color 100%);
 }
