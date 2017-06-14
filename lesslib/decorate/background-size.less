@@ -1,0 +1,52 @@
+/**
+ *
+ *
+ * @@@ Mixin
+ * .background-size();
+ *
+ *
+ * @@@ Description
+ * The background-size CSS property specifies the size of the background images. 
+ * The size of the image can be fully constrained or only partially in order to preserve its intrinsic ratio.
+ *
+ *
+ * @@@ Mixin Structure
+ *
+ * .background-size(@xsize); -> cover | contain| auto | *length units | percentage
+ * *More information about length units con be found here - https://developer.mozilla.org/en-US/docs/Web/CSS/length
+ *
+ *
+ * @@@ Usage
+ *
+ * - Less Example
+ * .example {
+ *     .background-size(cover);
+ * }
+ *
+ * - Css Output
+ * .example {
+ * 		-webkit-background-size: cover;
+ *		-moz-background-size: cover;
+ *		-o-background-size: cover;
+ *		background-size: cover;
+ * }
+ *
+ *
+ * @@@ Info Notes
+ *
+ * CSS Background-size reference - https://developer.mozilla.org/en-US/docs/Web/CSS/background-size?v=control
+ * 
+ *
+ * @@@ Prefixes Support
+ *
+ * Based on caniuse website @ http://caniuse.com/#search=background-size
+ *
+ *
+ */
+
+.background-size(@size: cover) {
+	-webkit-background-size: @size;
+	-moz-background-size: @size;
+	-o-background-size: @size;
+	background-size: @size;
+}
