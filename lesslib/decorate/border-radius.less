@@ -1,3 +1,60 @@
 /**
- * Under Development
+ *
+ *
+ * @@@ Mixin
+ * .border-radius();
+ * .border-radius-single();
+ *
+ *
+ * @@@ Description
+ * The border-radius CSS property allows Web authors to define how 
+ * rounded border corners are. You can specify a single radius to 
+ * make circular corners, or two radii, to make elliptical corners.
+ *
+ *
+ * @@@ Mixin Structure
+ * .border-radius(); -> Define a radius value(s).
+ * .border-radius-single(@position-y, @position-x, @radius); Define Axis Y posotion (top or bottom), an Axis X position (left or right) and a radius value.
+ *
+ *
+ * @@@ Usage
+ *
+ * - Less Example
+ * .example {
+ *     .border-radius(5px 10px);
+ *     .border-radius-single(top, right, 10px);
+ * }
+ *
+ * - Css Output
+ * .example {
+ *     border-radius: 5px 10px;
+ *     border-top-right-radius: 10px;
+ * }
+ *
+ *
+ * @@@ Info Notes
+ * CSS border-radius function reference - https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+ *
+ *
+ * @@@ Prefixes Support
+ * Based on caniuse website @ https://caniuse.com/#search=border-radius
+ *
+ *
  */
+
+
+/**
+ * Border Radius
+ */
+
+.border-radius (@radius) {
+    border-radius: @radius; 
+}
+
+/**
+ * Border Radius Single
+ */
+
+.border-radius-single (@position-y, @position-x, @radius) {
+    border-@{position-y}-@{position-x}-radius: @radius; 
+}
