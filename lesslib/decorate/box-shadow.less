@@ -2,8 +2,14 @@
  * Under Development
  */
 
-.box-shadow(@shadow) {
-	-webkit-box-shadow: @shadow;
-	-moz-box-shadow: @shadow;
-	box-shadow: @shadow;
+
+
+.box-shadow-1 (@x-axis: 0px, @y-axis: 0px, @blur: 1px, @colour: rgba(0, 0, 0, 0.2)) {
+	-webkit-box-shadow: @arguments;
+		-moz-box-shadow: @arguments;
+			box-shadow: @arguments;
 }
+
+  .test {
+	  .box-shadow-1(3px, 3px, 10px, fade(red, 70%));
+  }
