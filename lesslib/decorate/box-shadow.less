@@ -1,15 +1,9 @@
 /**
- * Under Development
+ * Box Sizing
  */
 
-
-
-.box-shadow-1 (@x-axis: 0px, @y-axis: 0px, @blur: 1px, @colour: rgba(0, 0, 0, 0.2)) {
+.box-shadow-1 (@arguments) {
 	-webkit-box-shadow: @arguments;
-		-moz-box-shadow: @arguments;
-			box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
 }
-
-  .test {
-	  .box-shadow-1(3px, 3px, 10px, fade(red, 70%));
-  }
