@@ -1,0 +1,12 @@
+/**
+ * Center Horizontally
+ */
+ 
+.horizontal-center(@width, @display) {
+	width: @width;
+	margin: 0 auto;
+	
+	& when not(@display = undefined) {
+		display: @display;
+	}
+}
