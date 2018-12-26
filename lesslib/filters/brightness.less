@@ -1,8 +1,12 @@
 /**
  * Brightness
+ *
+ * ### Syntax
+ * blur(radius) - <number> or a <percentage> - Ex. 0.3 or 30%
+ *
  */
  
-.brightness(@value) {
-	-webkit-filter: brightness(@value);
-	filter: brightness(@value);
+.brightness(@amount) {
+	-webkit-filter: brightness(@amount);
+	filter: brightness(@amount);
 }
