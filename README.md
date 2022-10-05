@@ -1,5 +1,4 @@
 # LessLib
-LessLib é uma biblioteca de mixins úteis para o pre-processador LESSCSS.
-Este pre-processador é uma ferramenta fantástica que estende o código CSS tornando-o dinâmico, facilitanto assim a manuntenção do código CSS.
+LessLib is a library of useful mixins for the LESSCSS pre-processor. This pre-processor is a fantastic tool that extends CSS code by making it dynamic, thus making CSS code maintenance easier.
 
-Os mixins que compõem esta biblioteca são extremamente fáceis de utilizar e a ideia é tornar o código repetitivo menos aborrecido. A biblioteca é composta de mixins que eu normalmente tenho vindo a utilizar em todos os meus projectos web, por isso esta lista certamente irá crescer.
+The mixins of this library are extremely easy to use and the idea is to make repetitive code less boring. The library is made up of mixins that I've usually been using in my web projects, so this list is sure to grow.
