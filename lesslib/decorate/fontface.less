@@ -2,17 +2,20 @@
  * Fontface
  */
  
- .fontface(@font-family, @filename, @font-weight, @font-style, @font-path){
-    @font-face{
-        font-family: '@{font-family}';
-        src:url('@{font-path}@{filename}.eot');
-        src:url('@{font-path}@{filename}.eot?#iefix') format('embedded-opentype'),
-            url('@{font-path}@{filename}.woff') format('woff'),
-            url('@{font-path}@{filename}.ttf') format('truetype'),
-            url('@{font-path}@{filename}.svg#icon') format('svg');
-        font-weight: @font-weight;
-        font-style: @font-style;
-    }
+ .fontface(
+    @font-family, 
+    @filename, 
+    @font-weight, 
+    @font-style, 
+    @font-path){
+        @font-face{
+            font-family: '@{font-family}';
+            src:url('@{font-path}@{filename}.eot');
+            src:url('@{font-path}@{filename}.eot?#iefix') format('embedded-opentype'),
+                url('@{font-path}@{filename}.woff') format('woff'),
+                url('@{font-path}@{filename}.ttf') format('truetype'),
+                url('@{font-path}@{filename}.svg#icon') format('svg');
+            font-weight: @font-weight;
+            font-style: @font-style;
+        }
 }
-
-// .fontface(@font-family: 'Font Family', @filename: 'font-name', @font-weight: 600, @font-style: normal, @font-path: 'fonts/');
