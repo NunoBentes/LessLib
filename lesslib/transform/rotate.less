@@ -1,90 +1,38 @@
 /**
- *
- *
- * @@@ Mixin
- * .rotate();
- * .rotateX();
- * .rotateY();
- * .rotateZ();
- * .rotate3d();
- *
- *
- * @@@ Description
- * The rotate() CSS function defines a transformation that moves the element around a fixed point. 
- * The amount of movement is defined by the specified angle; 
- * if positive, the movement will be clockwise, if negative, it will be counter-clockwise. 
- *
- *
- * @@@ Mixin Structure
- *
- * .rotate(@degrees); -> Defines a 2D rotate transformation by giving a degree value.
- * .rotateX(@x-degrees); -> Defines a 2D rotate transformation over the X-axis by giving a degree value.
- * .rotateY(@y-degrees); -> Defines a 2D rotate transformation over the Y-axis by giving a degree value.
- * .rotateZ(@z-degrees); -> Defines a 3D rotate transformation over the Z-axis by giving a degree value
- * .rotate3d(@x-degrees, @y-degrees, @z-degrees); -> Defines a 3D rotate transformation over the Z-axis, Y-axis and Z-Axis, by giving a degree value
- *
- *
- * @@@ Usage
- *
- * - Less Example
- * .example {
- *     .rotate(45deg);
- * }
- *
- * - Css Output
- * .example {
- *     -webkit-transform: rotate(45deg);
- *     transform: rotate(45deg);
- * }
- *
- *
- * @@@ Info Notes
- *
- * CSS rotate() function reference - https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate
- * CSS rotateX() function reference - https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatex
- * CSS rotateY() function reference - https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotatey
- * CSS rotateZ() function reference - https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateZ
- * CSS rotate3d() function reference - https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d
- * 
- *
- * @@@ Prefixes Support
- *
- * Based on caniuse website @ http://caniuse.com/#search=transform
- *
- *
+ * Rotate
  */
 
 
-/**
- * Rotate 2D 
- */
+/* Rotate 2D */
 
-.rotate(@degrees: 0deg) {
+.rotate(@degrees) {
 	-webkit-transform: rotate(@degrees);
-	transform: rotate(@degrees);
+		transform: rotate(@degrees);
 }
 
-.rotateX(@x-degrees: 0deg) {
+.rotateX(@x-degrees) {
 	-webkit-transform: rotateX(@x-degrees);
-	transform: rotateX(@x-degrees);
+		transform: rotateX(@x-degrees);
 }
 
-.rotateY(@y-degrees: 0deg) {
+.rotateY(@y-degrees) {
 	-webkit-transform: rotateY(@y-degrees);
-	transform: rotateY(@y-degrees);
+		transform: rotateY(@y-degrees);
 }
 
 
-/**
- * Rotate 3D
- */
+/* Rotate 3D */
 
-.rotateZ(@z-degrees: 0deg) {
+.rotateZ(@z-degrees) {
 	-webkit-transform: rotateZ(@z-degrees);
-	transform: rotateZ(@z-degrees);
+		transform: rotateZ(@z-degrees);
 }
 
-.rotate3d(@x-degrees: 0deg, @y-degrees: 0deg, @z-degrees: 0deg) {
+.rotate3d(
+	@x-degrees, 
+	@y-degrees, 
+	@z-degrees
+) {
 	-webkit-transform: rotate3d(@x-degrees, @y-degrees, @z-degrees);
-	transform: rotate3d(@x-degrees, @y-degrees, @z-degrees);
+		transform: rotate3d(@x-degrees, @y-degrees, @z-degrees);
 }

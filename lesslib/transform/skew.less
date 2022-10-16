@@ -1,3 +1,14 @@
 /**
- * Under Development
+ * Skew
  */
+
+.skew (
+	@x-degrees, 
+	@y-degrees
+) {
+	-webkit-transform: skew(@x-degrees, @y-degrees);
+		-moz-transform: skew(@x-degrees, @y-degrees);
+			-ms-transform: skew(@x-degrees, @y-degrees);
+				-o-transform: skew(@x-degrees, @y-degrees);
+					transform: skew(@x-degrees, @y-degrees);
+}
