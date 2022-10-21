@@ -1,61 +1,6 @@
 /**
- *
- *
- * @@@ Mixin
- * .size();
- * .square();
- *
- *
- * @@@ Description
- * Resize element by adding width & height values. Display type can be added,
- * but if empty will not output the css display property.
- *
- *
- * @@@ Mixin Structure
- *
- * - Mixin Structure
- * .size(@width, @height, @display); -> Defines an element dimension by adding width and height values. Display property is optional and can be empty.
- * .square(@size, @display); -> Defines a squared element by adding a side size. Display property is optional and can be empty.
- *
- *
- * @@@ Usage
- *
- * - Less Example
- * .example {
- *     .size(100px, 100px, block);
- * }
- *
- * .example1 {
- *     .size(100px, 100px);
- * }
- *
- * - Css Output
- * .example {
- *     width:100px;
- *     height:100px;
- *     display:block;
- * }
- *
- * .example1 {
- *     width:100px;
- *     height:100px;
- * }
- *
- *
- * @@@ Info Notes
- *
- * CSS Display property values reference - https://developer.mozilla.org/en-US/docs/Web/CSS/display
- * CSS Width property values reference - https://developer.mozilla.org/en-US/docs/Web/CSS/width
- * CSS Height property values reference - https://developer.mozilla.org/en-US/docs/Web/CSS/height
- * For both Width and Height properties, check the available units - https://developer.mozilla.org/en-US/docs/Web/CSS/length
- * 
- *
- */
-
-
-/**
-* Size
-*/ 
+ * Size & Square
+ */ 
 
 .size(@width, @height, @display:undefined) {
 	width: @width;
@@ -65,11 +10,6 @@
 		display: @display;
 	}
 }
-
-
-/**
-* Square
-*/ 
 
 .square(@size, @display:undefined) {
 	width: @size;

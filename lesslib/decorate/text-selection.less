@@ -6,7 +6,11 @@
 	@background-color, 
 	@text-color
 ){
-	::-moz-selection,
+	::-moz-selection {
+		background:@background-color; 
+		color: @text-color
+	}
+	
 	::selection {
 		background:@background-color; 
 		color: @text-color
