@@ -29,10 +29,11 @@
 }
 
 .rotate3d(
-	@x-degrees, 
-	@y-degrees, 
-	@z-degrees
+	@x-coordinate, 
+	@y-coordinate, 
+	@z-coordinate,
+	@angle
 ) {
-	-webkit-transform: rotate3d(@x-degrees, @y-degrees, @z-degrees);
-		transform: rotate3d(@x-degrees, @y-degrees, @z-degrees);
+	-webkit-transform: rotate3d(@x-coordinate, @y-coordinate, @z-coordinate, @angle);
+		transform: rotate3d(@x-coordinate, @y-coordinate, @z-coordinate, @angle);
 }
