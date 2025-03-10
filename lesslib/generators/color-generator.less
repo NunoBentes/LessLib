@@ -1,20 +1,20 @@
 // Color Generator Mixin
 .color-generator(@base-color, @steps: 5, @amount: 10%) {
-// Loop to generate lighter colors
-	.loop(@i) when (@i > 0) {
-		@light-color: lighten(@base-color, @amount * @i);
-		.light@{i} { color: @light-color; }
-		.loop(@i - 1);
-	}
-	.loop(@steps);
+  // Loop to generate lighter colors
+  .loop(@i) when (@i > 0) {
+    @light-color: lighten(@base-color, @amount * @i);
+    .light@{i} { color: @light-color; }
+    .loop(@i - 1);
+  }
+  .loop(@steps);
 
-	// Loop to generate darker colors
-	.loop-d(@i) when (@i > 0) {
-		@dark-color: darken(@base-color, @amount * @i);
-		.dark@{i} { color: @dark-color; }
-		.loop-d(@i - 1);
-	}
-	.loop-d(@steps);
+  // Loop to generate darker colors
+  .loop-d(@i) when (@i > 0) {
+    @dark-color: darken(@base-color, @amount * @i);
+    .dark@{i} { color: @dark-color; }
+    .loop-d(@i - 1);
+  }
+  .loop-d(@steps);
 }
 
 // Example Usage
