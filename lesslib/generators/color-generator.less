@@ -1,43 +1,57 @@
-// Color Generator Mixin
-.color-generator(@base-color, @steps: 5, @amount: 10%) {
-  // Loop to generate lighter colors
+// Define an array of colors with names and hex values
+@colors: pink #ff69b4, blue #3498db, green #2ecc71, orange #e67e22;
+
+// Color Generator Mixin by Name and Shade
+.generate-color(@base-color, @name, @steps: 10) {
   .loop(@i) when (@i > 0) {
-    @light-color: lighten(@base-color, @amount * @i);
-    .light@{i} { color: @light-color; }
+    @shade: @i * (100 / @steps);
+    @color: lighten(@base-color, @shade);
+    .@{name}-@{shade} { color: @color; }
     .loop(@i - 1);
   }
   .loop(@steps);
 
-  // Loop to generate darker colors
   .loop-d(@i) when (@i > 0) {
-    @dark-color: darken(@base-color, @amount * @i);
-    .dark@{i} { color: @dark-color; }
+    @shade: @i * (100 / @steps);
+    @color: darken(@base-color, @shade);
+    .@{name}-@{shade} { color: @color; }
     .loop-d(@i - 1);
   }
   .loop-d(@steps);
 }
 
+// Iterate over the array of colors and generate variations
+.generate-colors(@colors) {
+  .loop-colors(@i) when (@i > 0) {
+    @color-info: extract(@colors, @i);
+    @name: extract(@color-info, 1);
+    @hex: extract(@color-info, 2);
+    .generate-color(@hex, @name, 10);
+    .loop-colors(@i - 1);
+  }
+  .loop-colors(length(@colors));
+}
+
 // Example Usage
 .colors {
-.color-generator(#3498db, 5, 10%);
+  .generate-colors(@colors);
 }
 
 /*
 
 Explanation:
-.color-generator Mixin:
+Define an Array of Colors:
 
-Takes three parameters:
-@base-color: The base color to generate variations from.
-@steps: The number of color variations to generate.
-@amount: The percentage by which to lighten or darken the base color.
-.loop and .loop-d:
+@colors: pink #ff69b4, blue #3498db, green #2ecc71, orange #e67e22;: This defines an array with color names and their corresponding hex values.
+Color Generator Mixin:
 
-These loops generate lighter (.loop) and darker (.loop-d) colors based on the base color.
-Each iteration lightens or darkens the base color by the specified @amount.
+.generate-color(@base-color, @name, @steps: 10): This mixin generates color variations for a given base color and name.
+Loop through the Array:
+
+.generate-colors(@colors): This mixin iterates over the array of colors and calls the .generate-color mixin for each color.
+.loop-colors(@i): This inner loop extracts the color name and hex value from the array and generates the color variations.
 Example Usage:
 
-The .colors class uses the .color-generator mixin to generate 5 lighter and 5 darker variations of the base color #3498db.
-This mixin will generate CSS classes (.light1, .light2, etc. for lighter colors and .dark1, .dark2, etc. for darker colors) with the respective color variations. Feel free to adjust the parameters and use it as needed for your projects!
+The .colors class uses the .generate-colors mixin to generate color classes for all the colors in the array.
 
 */
