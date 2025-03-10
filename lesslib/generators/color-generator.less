@@ -1,0 +1,43 @@
+// Color Generator Mixin
+.color-generator(@base-color, @steps: 5, @amount: 10%) {
+// Loop to generate lighter colors
+	.loop(@i) when (@i > 0) {
+		@light-color: lighten(@base-color, @amount * @i);
+		.light@{i} { color: @light-color; }
+		.loop(@i - 1);
+	}
+	.loop(@steps);
+
+	// Loop to generate darker colors
+	.loop-d(@i) when (@i > 0) {
+		@dark-color: darken(@base-color, @amount * @i);
+		.dark@{i} { color: @dark-color; }
+		.loop-d(@i - 1);
+	}
+	.loop-d(@steps);
+}
+
+// Example Usage
+.colors {
+.color-generator(#3498db, 5, 10%);
+}
+
+/*
+
+Explanation:
+.color-generator Mixin:
+
+Takes three parameters:
+@base-color: The base color to generate variations from.
+@steps: The number of color variations to generate.
+@amount: The percentage by which to lighten or darken the base color.
+.loop and .loop-d:
+
+These loops generate lighter (.loop) and darker (.loop-d) colors based on the base color.
+Each iteration lightens or darkens the base color by the specified @amount.
+Example Usage:
+
+The .colors class uses the .color-generator mixin to generate 5 lighter and 5 darker variations of the base color #3498db.
+This mixin will generate CSS classes (.light1, .light2, etc. for lighter colors and .dark1, .dark2, etc. for darker colors) with the respective color variations. Feel free to adjust the parameters and use it as needed for your projects!
+
+*/
